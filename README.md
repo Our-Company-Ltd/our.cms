@@ -25,18 +25,18 @@ using our.cms;
 ```C#
 public void ConfigureServices(IServiceCollection services)
 {
-  ...
+  …
   services.AddOurCMS();
-  ...
+  …
 }
 ```
 
 ```C#
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, ...
 {
-  ...
+  …
   app.UseOurCMS();
-  ...
+  …
 }
 ```
 
@@ -82,7 +82,7 @@ public class HomeController : Controller
     // gets the database
     DB = dbprovider.Default;
   }
-  ...
+  …
   public IActionResult Index()
   {
     
@@ -93,6 +93,8 @@ public class HomeController : Controller
     
     return View();
   }
+  …
+}
 ```
 
 
