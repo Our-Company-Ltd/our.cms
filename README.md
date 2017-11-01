@@ -1,12 +1,23 @@
-Our CMS : .net + MongoDB = ❤
+Our CMS :
+.net + MongoDB = ❤
 =================
 
 You can get the latest stable release from the official Nuget.org feed or from our github releases page.
 
-Getting Started
+### Supported Platforms
+* .NET Standard 1.6 : [.NET Core 1.0, .NET Framework 4.6.1, Mono 4.6...](https://docs.microsoft.com/en-us/dotnet/standard/net-standard)
+* .NET Standard 2.0 : [.NET Core 2.0, .NET Framework 4.6.1, Mono 5.4...](https://docs.microsoft.com/en-us/dotnet/standard/net-standard)
+
+Installation
 ---------------
 
-### Step 1: Add Our CMS
+### Install nuget
+Download via [Nuget](https://www.nuget.org/packages/our.cms/) on `Package Manager Console`:
+```
+PM> Install-Package our.cms
+```
+
+### Add to your app
 ```C#
 using our.cms;
 ```
@@ -29,7 +40,14 @@ app.UseOurCMS();
 }
 ```
 
-### Step 2: Create Model
+Getting Started
+---------------
+
+### Step 1: Create Model
+```C#
+using our.cms;
+```
+
 ```C#
 [Root]
 [ParentOf(typeof(Child))]
@@ -50,6 +68,10 @@ public class Child : CmsEntry
 
 ### Step 2: Use Data
 ```C#
+using our.cms;
+```
+
+```C#
 public class HomeController : Controller
 {
   
@@ -65,8 +87,6 @@ public class HomeController : Controller
   {
     
     var child = DB.Find<Child>().FirstOrDefault();
-    
-    
     
     ViewData["Title"] = child?.Title ?? "no child !";
     ViewData["Content"] = child?.Content ?? "";
