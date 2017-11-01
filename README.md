@@ -57,7 +57,6 @@ public class Root : CmsEntry
 
 public class Child : CmsEntry
 {
-  [Legend]
   [Text]
   public string Title { get; set; }
   
