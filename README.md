@@ -82,7 +82,9 @@ public class HomeController : Controller
     // gets the database
     DB = dbprovider.Default;
   }
+  
   …
+  
   public IActionResult Index()
   {
     
@@ -93,7 +95,9 @@ public class HomeController : Controller
     
     return View();
   }
+  
   …
+  
 }
 ```
 
